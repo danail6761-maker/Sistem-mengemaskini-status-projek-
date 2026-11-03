@@ -1,0 +1,1418 @@
+{
+ "versi": 1,
+ "dieksport": "2026-11-03",
+ "dokumen": {
+  "projects/44000-1": {
+   "aktiviti": [
+    "Kontraktor telah dilantik (SST 9 Sept 2026)",
+    "Milik tapak 22 Sept 2026"
+   ],
+   "baki": 200000,
+   "bayaran": [],
+   "belanja": 0,
+   "catatan": "Telah melantik kontraktor.\nTarikh SST : 9 Sept 2026\nTarikh Milik Tapak : 22 Sept 2026\nTarikh Siap : 19 Julai 2027\n\nIklan Notis Sebutharga : 18.06.2026\nLawatan Tapak : 25.06.2026\nTarikh Tutup : 08.07.2026",
+   "daerah": "KUALA PILAH",
+   "dun": "N15 JUASSEH",
+   "fizJadual": 0,
+   "fizSebenar": 0,
+   "gambar": [],
+   "isu": [],
+   "kategori": "Sambungan",
+   "kewJadual": "",
+   "kewSebenar": "",
+   "kod": "44000-1",
+   "kontraktor": "AE MEGA SDN. BHD.",
+   "kos": "",
+   "kosKeseluruhan": 7000000,
+   "noKontrak": "",
+   "parlimen": "",
+   "pelaksanaan": "Dalam Pelaksanaan",
+   "peringkat": "Pembinaan",
+   "perunding": "",
+   "perundingKos": "",
+   "peruntukan": 200000,
+   "peta": null,
+   "pp": "",
+   "program": "44000",
+   "skop": [],
+   "statusManual": "",
+   "tahunBelanja": "2026",
+   "tajuk": "Membaiki Persimpangan Merbahaya dan Lain-lain Kerja Berkaitan di Persimpangan Jalan Juasseh Jemapoh N162 ke Jalan Kuala Pilah - Batu Kikir, Daerah Kuala Pilah",
+   "tanggungan": 0,
+   "tarikhKemaskini": "2026-09-30",
+   "tarikhMilik": "2026-09-22",
+   "tarikhSiap": "2027-07-19",
+   "tempoh": 43,
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "wpp": ""
+  },
+  "projects/N101": {
+   "aktiviti": [
+    "Kerja pengalihan utiliti – telah selesai",
+    "Kerja-kerja tembok penahan – telah selesai",
+    "Kerja-kerja longkang dan saliran – telah selesai",
+    "Kerja akan datang: pelebaran jalan, premix dan perabot jalan"
+   ],
+   "baki": 2923289.6,
+   "bayaran": [
+    {
+     "amaun": 0,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 1",
+     "tahun": "2025",
+     "tarikh": "2025-09-30"
+    },
+    {
+     "amaun": 19000,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 2",
+     "tahun": "2025",
+     "tarikh": "2025-10-31"
+    },
+    {
+     "amaun": 0,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 3",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 76140,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 4",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 0,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 5",
+     "tahun": "2026",
+     "tarikh": ""
+    },
+    {
+     "amaun": 163900,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 6",
+     "tahun": "2026",
+     "tarikh": ""
+    },
+    {
+     "amaun": 71700,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 7",
+     "tahun": "2026",
+     "tarikh": ""
+    },
+    {
+     "amaun": 132400,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 8",
+     "tahun": "2026",
+     "tarikh": ""
+    },
+    {
+     "amaun": 15000,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 9",
+     "tahun": "2026",
+     "tarikh": ""
+    },
+    {
+     "amaun": 31250,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 10",
+     "tahun": "2026",
+     "tarikh": ""
+    },
+    {
+     "amaun": 656700,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 11",
+     "tahun": "2026",
+     "tarikh": ""
+    }
+   ],
+   "belanja": 1076710.4,
+   "catatan": "PERUNDING: Pro Design Engineering Sdn. Bhd. (Kos Kontrak : RM645,540.00), 17.11.2023 - 16.8.2027\nBayaran Perunding 2023: Interim No 1 : RM92,021.25\nBayaran Perunding 2024: Interim No.2 : RM184,042.50; Interim No.3 : RM1,165.89\nBayaran 2025: Bayaran Iklan (Media Prima Omnia) : RM 4,860.00\nBayaran 2026: Bayaran Jilid Dokumen Kontrak : RM5,760.40\n\nKONTRAKTOR: Rancang Bijak Sdn. Bhd.\nIklan Tender : 17 April 2025\nTaklimat dan lawatan tapak : 29 April 2025\nTarikh tutup tender : 3 Jun 2025\nLewat 3% (7 hari)\n\nKerja telah selesai: Kerja pengalihan utiliti; Kerja-kerja tembok penahan; Kerja-kerja longkang dan saliran\nKerja akan datang: Kerja pelebaran jalan; Kerja premix; Kerja perabot jalan",
+   "daerah": "KUALA PILAH",
+   "dun": "N16 SERI MENANTI",
+   "fizJadual": 60,
+   "fizSebenar": 57,
+   "gambar": [
+    {
+     "id": "50657fa2e2a0e8a46278d922e99cc96b",
+     "kapsyen": "",
+     "url": "/_blob/50657fa2e2a0e8a46278d922e99cc96b"
+    },
+    {
+     "id": "233fb509f08c4178aab08e74b4ff5781",
+     "kapsyen": "",
+     "url": "/_blob/233fb509f08c4178aab08e74b4ff5781"
+    },
+    {
+     "id": "d1465e236089a5c45cfbd7a7ee093667",
+     "kapsyen": "",
+     "url": "/_blob/d1465e236089a5c45cfbd7a7ee093667"
+    }
+   ],
+   "isu": [
+    "Kemajuan fizikal lewat 3% (7 hari) berbanding jadual"
+   ],
+   "kategori": "Sambungan",
+   "kewJadual": "",
+   "kewSebenar": 16.92,
+   "kod": "N101",
+   "kontraktor": "RANCANG BIJAK SDN BHD",
+   "kos": 6891415,
+   "kosKeseluruhan": 12500000,
+   "noKontrak": "JKR/NS/N/KP/019/2025",
+   "parlimen": "KUALA PILAH",
+   "pelaksanaan": "Dalam Pelaksanaan",
+   "peringkat": "Pembinaan",
+   "perunding": "Pro Design Engineering Sdn. Bhd.",
+   "perundingKos": 645540,
+   "peruntukan": 4000000,
+   "peta": {
+    "id": "291825d03f339aac6da4475c4f2942e7",
+    "url": "/_blob/291825d03f339aac6da4475c4f2942e7"
+   },
+   "pp": "JURUTERA DAERAH JKR KUALA PILAH",
+   "program": "41000",
+   "skop": [
+    "Kerja awalan",
+    "Kerja pembersihan dan perobohan",
+    "Kerja longkang dan pembentung",
+    "Kerja turapan jalan",
+    "Pemasangan perabot jalan",
+    "Pembinaan tembok penahan",
+    "Kawalan trafik",
+    "Pengalihan utiliti"
+   ],
+   "statusManual": "",
+   "tahunBelanja": "2026",
+   "tajuk": "Kerja-kerja Penyelenggaraan Jalan di Laluan Ampang Tinggi - Kuala Pilah (N3) dan Lain-lain Kerja Berkaitan dalam Daerah Kuala Pilah",
+   "tanggungan": 0,
+   "tarikhKemaskini": "2026-09-30",
+   "tarikhMilik": "2025-09-18",
+   "tarikhSiap": "2027-03-17",
+   "tempoh": 78,
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "wpp": "JURUTERA JALAN JKR KUALA PILAH"
+  },
+  "projects/44000-2": {
+   "aktiviti": [],
+   "baki": 500000,
+   "bayaran": [],
+   "belanja": 0,
+   "catatan": "Projek digugurkan kerana berdasarkan perbincangan bersama Dato' Pengarah JKRNS dan YAB Dato' Seri Utama Haji Aminuddin bin Harun, Menteri Besar Negeri Sembilan pada 2 Disember 2025, YAB Menteri Besar mencadangkan projek ini dilaksanakan di bawah Peruntukan Penyenggaraan Jalan Negeri (MARRIS).",
+   "daerah": "JELEBU",
+   "dun": "N01 CHENNAH",
+   "fizJadual": "",
+   "fizSebenar": "",
+   "gambar": [],
+   "isu": [
+    "Projek digugurkan – dicadangkan dilaksanakan di bawah Peruntukan Penyenggaraan Jalan Negeri (MARRIS)"
+   ],
+   "kategori": "Sambungan",
+   "kewJadual": "",
+   "kewSebenar": "",
+   "kod": "44000-2",
+   "kontraktor": "",
+   "kos": "",
+   "kosKeseluruhan": 1000000,
+   "noKontrak": "",
+   "parlimen": "",
+   "pelaksanaan": "Batal",
+   "peringkat": "Batal",
+   "perunding": "",
+   "perundingKos": "",
+   "peruntukan": 500000,
+   "peta": null,
+   "pp": "",
+   "program": "44000",
+   "skop": [],
+   "statusManual": "",
+   "tahunBelanja": "2026",
+   "tajuk": "Membaiki Persimpangan Merbahaya di Seksyen 7.4, Jalan Kuala Klawang - Genting Peras N32, Daerah Jelebu",
+   "tanggungan": 0,
+   "tarikhKemaskini": "2026-09-30",
+   "tarikhMilik": "",
+   "tarikhSiap": "",
+   "tempoh": "",
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "wpp": ""
+  },
+  "projects/43000-1": {
+   "aktiviti": [
+    "Kerja fizikal siap 100%"
+   ],
+   "baki": 1524685.49,
+   "bayaran": [
+    {
+     "amaun": 0,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 1",
+     "tahun": "2024",
+     "tarikh": ""
+    },
+    {
+     "amaun": 193700,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 2",
+     "tahun": "2024",
+     "tarikh": ""
+    },
+    {
+     "amaun": 475800,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 3",
+     "tahun": "2024",
+     "tarikh": ""
+    },
+    {
+     "amaun": 637500,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 4",
+     "tahun": "2024",
+     "tarikh": ""
+    },
+    {
+     "amaun": 693000,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 5",
+     "tahun": "2024",
+     "tarikh": ""
+    },
+    {
+     "amaun": 126600,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 6",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 190400,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 7",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 225300,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 8",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 355300,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 9",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 159800,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 10",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 868100,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 11",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 213200,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 12",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 499400,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 13",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 889000,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 14",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 931700,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 15",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 274200,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 16",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 1103900,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 17",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 461400,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 18",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 146421.89,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 19",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 1038800,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 20",
+     "tahun": "2026",
+     "tarikh": ""
+    },
+    {
+     "amaun": 17300,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 21",
+     "tahun": "2026",
+     "tarikh": ""
+    },
+    {
+     "amaun": 48900,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 22",
+     "tahun": "2026",
+     "tarikh": ""
+    },
+    {
+     "amaun": 39600,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 23",
+     "tahun": "2026",
+     "tarikh": ""
+    },
+    {
+     "amaun": 39700,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 24",
+     "tahun": "2026",
+     "tarikh": ""
+    },
+    {
+     "amaun": 165900,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 25",
+     "tahun": "2026",
+     "tarikh": ""
+    },
+    {
+     "amaun": 611700,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 26",
+     "tahun": "2026",
+     "tarikh": ""
+    }
+   ],
+   "belanja": 2075314.51,
+   "catatan": "KONTRAKTOR: Jejak Teknologi Sdn. Bhd.\nSurat setuju terima (SST) pada 6 Jun 2024\nTarikh siap asal : 17.6.2026 · EOT 1 (78 hari) : 3.9.2026\nSalur ke JKR Seremban RM2,000,000.00\n\nPERUNDING: Persada Consultancy (Tapak Bina & C&S), 7.8.2020 - 6.2.2024, lanjutan 6.8.2027\nBayaran Perunding (SS): 2021 = RM 61,436.13; 2022 = RM 108,895.13; 2023 = RM 87,806.44\nBayaran Perunding (C&S): 2020 = RM 171,312.96; 2021 = RM 36,834.10; 2023 = RM 13,636.17\nBayaran Iklan 2023 (Media Prima Omnia) = RM10,303.20\nBayaran Kos Waylif kepada KTMB (2024) = RM125,000.00\nNAA REKA LEGACY (Dok. Kontrak) = RM 4,006.40\nBayaran Perunding 2024: Interim No.5 = RM1,113.00; No.6 = RM13,542.34\nBayaran Perunding 2025: No.7 = RM13,542.34; No.8 = RM27,084.67; No.9 = RM13,542.34; No.10 = RM27,084.67; No.11 = RM27,084.67; No.12 = RM27,084.67; No.13 = RM1,160.08; No.14 = RM27,084.67\nBayaran Perunding 2026: No.15 = RM45,702.83; No.16 = RM27,084.67; No.17 = RM27,084.67",
+   "daerah": "SEREMBAN",
+   "dun": "N10 NILAI",
+   "fizJadual": 100,
+   "fizSebenar": 100,
+   "gambar": [],
+   "isu": [],
+   "kategori": "Sambungan",
+   "kewJadual": "",
+   "kewSebenar": 89.3,
+   "kod": "43000-1",
+   "kontraktor": "Jejak Teknologi Sdn. Bhd.",
+   "kos": 11653374.5,
+   "kosKeseluruhan": 13450000,
+   "noKontrak": "",
+   "parlimen": "",
+   "pelaksanaan": "Siap",
+   "peringkat": "Siap",
+   "perunding": "Persada Consultancy (Tapak Bina & C&S)",
+   "perundingKos": 776314.89,
+   "peruntukan": 3600000,
+   "peta": null,
+   "pp": "",
+   "program": "43000",
+   "skop": [],
+   "statusManual": "",
+   "tahunBelanja": "2026",
+   "tajuk": "Membina Jambatan Baharu di Kampung Batang Benar ke Kawasan Industri Nilai, Daerah Seremban (Tender Semula)",
+   "tanggungan": 0,
+   "tarikhKemaskini": "2026-09-30",
+   "tarikhMilik": "2024-06-20",
+   "tarikhSiap": "2026-09-03",
+   "tempoh": 115,
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "wpp": ""
+  },
+  "projects/47000-1": {
+   "aktiviti": [
+    "Kerja ukur telah siap"
+   ],
+   "baki": 47914.17,
+   "bayaran": [],
+   "belanja": 152085.83,
+   "catatan": "Di bawah butiran: Kerja Ukur, Hak Milik Sambungan (Pre-Com) dan Pelbagai Kajian Kerja Kejuruteraan Jalan Negeri dan Kerja-kerja Berkaitan (peruntukan RM200,000)\nSurat Setuju Terima telah dikeluarkan pada 17 Mac 2026\nTarikh Mula : 01/04/2026\nTarikh Siap : 21/07/2026\nTelah siap",
+   "daerah": "SEREMBAN",
+   "dun": "N25 PAROI",
+   "fizJadual": 100,
+   "fizSebenar": 100,
+   "gambar": [],
+   "isu": [],
+   "kategori": "Sambungan",
+   "kewJadual": "",
+   "kewSebenar": "",
+   "kod": "47000-1",
+   "kontraktor": "Ukur Sepakat",
+   "kos": 146571.43,
+   "kosKeseluruhan": 200000,
+   "noKontrak": "",
+   "parlimen": "",
+   "pelaksanaan": "Siap",
+   "peringkat": "Siap",
+   "perunding": "",
+   "perundingKos": "",
+   "peruntukan": 200000,
+   "peta": null,
+   "pp": "",
+   "program": "47000",
+   "skop": [],
+   "statusManual": "",
+   "tahunBelanja": "2026",
+   "tajuk": "Kerja-kerja Ukur Topografi dan UDM bagi Cadangan Projek Membina Jalan Baharu dari Taman Bukit Senawang Perdana ke Jalan Seremban-Tampin (FT001), Daerah Seremban",
+   "tanggungan": 0,
+   "tarikhKemaskini": "2026-09-30",
+   "tarikhMilik": "2026-04-01",
+   "tarikhSiap": "2026-07-21",
+   "tempoh": 16,
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "wpp": ""
+  },
+  "projects/TIADA": {
+   "aktiviti": [
+    "KERJA TELAH SIAP DITAPAK DAN TELAH DISERAH KAN KEPADA MAJLIS BANDARAYA SEREMBAN"
+   ],
+   "baki": 450125,
+   "bayaran": [
+    {
+     "amaun": 0,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 1",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 128500,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 2",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 300500,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 3",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 242800,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 4",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 453490,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 5",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 469609.66,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 6",
+     "tahun": "2025",
+     "tarikh": ""
+    },
+    {
+     "amaun": 136980,
+     "catatan": "TELAH DIBAYAR",
+     "jenis": "Bayaran Interim No. 7",
+     "tahun": "2026",
+     "tarikh": "2026-05-06"
+    },
+    {
+     "amaun": 58870,
+     "catatan": "TELAH DIBAYAR",
+     "jenis": "Bayaran Interim No. 8",
+     "tahun": "2026",
+     "tarikh": "2026-06-05"
+    },
+    {
+     "amaun": 270000,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 9",
+     "tahun": "2026",
+     "tarikh": ""
+    },
+    {
+     "amaun": 620280,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 10",
+     "tahun": "2026",
+     "tarikh": ""
+    },
+    {
+     "amaun": 315620,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 11",
+     "tahun": "2026",
+     "tarikh": ""
+    },
+    {
+     "amaun": 392300,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 12",
+     "tahun": "2026",
+     "tarikh": ""
+    },
+    {
+     "amaun": 279000,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 13",
+     "tahun": "2026",
+     "tarikh": ""
+    },
+    {
+     "amaun": 281500,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 14",
+     "tahun": "2026",
+     "tarikh": ""
+    },
+    {
+     "amaun": 1159895,
+     "catatan": "",
+     "jenis": "Bayaran Interim No. 15",
+     "tahun": "2026",
+     "tarikh": ""
+    }
+   ],
+   "belanja": 3519875,
+   "catatan": "Tarikh iklan tender : 12 Disember 2024\nBayaran Iklan Tender Media Prima Omnia = RM 4,860.00\nJilid Dokumen Kontrak : RM5,100.34\nSST pada 22 Mei 2025\nTarikh siap asal : 06.09.2026 · CPC : 03.09.2026",
+   "daerah": "SEREMBAN",
+   "dun": "PAROI",
+   "fizJadual": 100,
+   "fizSebenar": 100,
+   "gambar": [],
+   "isu": [],
+   "kategori": "Sambungan",
+   "kewJadual": 100,
+   "kewSebenar": 95,
+   "kod": "TIADA",
+   "kontraktor": "Sri Bukti Construction",
+   "kos": 5567097,
+   "kosKeseluruhan": 8000000,
+   "noKontrak": "JKR/NS/N/S/019/2025",
+   "parlimen": "SEREMBAN",
+   "pelaksanaan": "Siap",
+   "peringkat": "Pembinaan",
+   "peruntukan": 3970000,
+   "peta": null,
+   "pp": "JURUTERA DAERAH JKR SEREMBAN",
+   "program": "42000",
+   "skop": [
+    "MEMBINA JALAN BAHARU",
+    "KERJA MILL AND PAVE",
+    "MEMBINA JAMBATAN BAHARU ( BEBO ARCH BRIDGE)",
+    "KERJA PERABOT JALAN",
+    "KERJA MEMBINA LONGKANG BAHARU"
+   ],
+   "statusManual": "",
+   "tahunBelanja": "2026",
+   "tajuk": "MEMBINA JALAN BAHARU DARI JALAN TAMAN TUANKU JAA'FAR (TTJ) GOLF KE TAMAN BANDAR SENAWANG, DAEARAH SEREMBAN",
+   "tanggungan": 0,
+   "tarikhKemaskini": "2026-11-03",
+   "tarikhMilik": "2025-06-06",
+   "tarikhSiap": "2026-09-03",
+   "tempoh": 65,
+   "updatedAt": "2026-11-03T03:25:00.003Z",
+   "wpp": "JURUTERA JALAN JKR SEREMBAN"
+  },
+  "projects/N141": {
+   "aktiviti": [
+    "Dalam proses perolehan (penilaian sebut harga)"
+   ],
+   "baki": 485000,
+   "bayaran": [],
+   "belanja": 0,
+   "catatan": "Dalam proses perolehan (Penilaian sebutharga)\nIklan : 28 Julai 2026\nLawatan Tapak : 4 Ogos 2026\nTarikh Tutup : 19 Ogos 2026",
+   "daerah": "KUALA PILAH",
+   "dun": "N15 JUASSEH",
+   "fizJadual": "",
+   "fizSebenar": "",
+   "gambar": [],
+   "isu": [],
+   "kategori": "Baharu",
+   "kewJadual": "",
+   "kewSebenar": "",
+   "kod": "N141",
+   "kontraktor": "",
+   "kos": "",
+   "kosKeseluruhan": 6000000,
+   "noKontrak": "",
+   "parlimen": "",
+   "pelaksanaan": "Pra Pelaksanaan",
+   "peringkat": "Perolehan",
+   "perunding": "",
+   "perundingKos": "",
+   "peruntukan": 485000,
+   "peta": null,
+   "pp": "",
+   "program": "41000",
+   "skop": [],
+   "statusManual": "",
+   "tahunBelanja": "2026",
+   "tajuk": "Menaiktaraf Jalan Pelangai - Terentang (N141), Daerah Kuala Pilah",
+   "tanggungan": 0,
+   "tarikhKemaskini": "2026-09-30",
+   "tarikhMilik": "",
+   "tarikhSiap": "",
+   "tempoh": "",
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "wpp": ""
+  },
+  "projects/TIADA/sejarah/t4xjoc843vpcne4osqrn": {
+   "aktiviti": [
+    "KERJA TELAH SIAP DITAPAK DAN TELAH DISERAH KAN KEPADA MAJLIS BANDARAYA SEREMBAN"
+   ],
+   "bayaran": [
+    {
+     "amaun": 136980,
+     "catatan": "TELAH DIBAYAR",
+     "jenis": "Bayaran Interim No. 7",
+     "tarikh": "2026-05-06"
+    },
+    {
+     "amaun": 58870,
+     "catatan": "TELAH DIBAYAR",
+     "jenis": "Bayaran Interim No. 8",
+     "tarikh": "2026-06-05"
+    }
+   ],
+   "belanja": 3519875,
+   "dun": "PAROI",
+   "fizJadual": 100,
+   "fizSebenar": 100,
+   "gambar": [],
+   "isu": [],
+   "kewJadual": 100,
+   "kewSebenar": 95,
+   "kod": "TIADA",
+   "kontraktor": "Sri Bukti Construction",
+   "kos": 5567097,
+   "noKontrak": "JKR/NS/N/S/019/2025",
+   "nota": "",
+   "parlimen": "SEREMBAN",
+   "peringkat": "Pembinaan",
+   "peruntukan": 3970000,
+   "peta": null,
+   "pp": "JURUTERA DAERAH JKR SEREMBAN",
+   "savedAt": "2026-11-03T03:25:00.003Z",
+   "skop": [
+    "MEMBINA JALAN BAHARU",
+    "KERJA MILL AND PAVE",
+    "MEMBINA JAMBATAN BAHARU ( BEBO ARCH BRIDGE)",
+    "KERJA PERABOT JALAN",
+    "KERJA MEMBINA LONGKANG BAHARU"
+   ],
+   "statusManual": "",
+   "tahunBelanja": "2026",
+   "tajuk": "MEMBINA JALAN BAHARU DARI JALAN TAMAN TUANKU JAA'FAR (TTJ) GOLF KE TAMAN BANDAR SENAWANG, DAEARAH SEREMBAN",
+   "tarikhKemaskini": "2026-11-03",
+   "tarikhMilik": "2025-06-06",
+   "tarikhSiap": "2026-09-03",
+   "tempoh": 65,
+   "updatedAt": "2026-11-03T03:25:00.003Z",
+   "wpp": "JURUTERA JALAN JKR SEREMBAN"
+  },
+  "projects/N101/sejarah/import-nov25": {
+   "kod": "N101",
+   "tajuk": "Kerja-kerja Penyelenggaraan Jalan di Laluan Ampang Tinggi - Kuala Pilah (N3) dan Lain-lain Kerja Berkaitan dalam Daerah Kuala Pilah",
+   "peringkat": "Pembinaan",
+   "pp": "JURUTERA DAERAH JKR KUALA PILAH",
+   "wpp": "JURUTERA JALAN JKR KUALA PILAH",
+   "kontraktor": "RANCANG BIJAK SDN BHD",
+   "noKontrak": "JKR/NS/N/KP/019/2025",
+   "tarikhMilik": "2025-09-18",
+   "tarikhSiap": "2027-03-17",
+   "tempoh": 78,
+   "kos": 6819415,
+   "parlimen": "KUALA PILAH",
+   "dun": "PILAH",
+   "fizJadual": 20,
+   "fizSebenar": 16,
+   "kewJadual": 6.39,
+   "kewSebenar": 0,
+   "tahunBelanja": "2025",
+   "peruntukan": 100000,
+   "belanja": 0,
+   "statusManual": "",
+   "bayaran": [
+    {
+     "tarikh": "2025-09-30",
+     "amaun": 0,
+     "jenis": "Bayaran Interim No. 1",
+     "catatan": ""
+    },
+    {
+     "tarikh": "2025-10-31",
+     "amaun": 19000,
+     "jenis": "Bayaran Interim No. 2",
+     "catatan": "Dalam semakan"
+    }
+   ],
+   "aktiviti": [
+    "Pengukuran sempadan dan topografi oleh juruukur",
+    "Lawatan tapak bersama utiliti bagi kerja pengalihan",
+    "Penandaan utiliti",
+    "Penyediaan pejabat tapak",
+    "Penyediaan dokumen dan kelulusan bahan"
+   ],
+   "isu": [
+    "Pihak kontraktor diminta untuk mengemukakan program kerja semula mengikut ulasan yang telah diberikan",
+    "Bahu jalan dan ruang kerja yang sempit bagi pengalihan utiliti"
+   ],
+   "skop": [
+    "Kerja awalan",
+    "Kerja pembersihan dan perobohan",
+    "Kerja longkang dan pembentung",
+    "Kerja turapan jalan",
+    "Pemasangan perabot jalan",
+    "Pembinaan tembok penahan",
+    "Kawalan trafik",
+    "Pengalihan utiliti"
+   ],
+   "peta": {
+    "id": "291825d03f339aac6da4475c4f2942e7",
+    "url": "/_blob/291825d03f339aac6da4475c4f2942e7"
+   },
+   "gambar": [
+    {
+     "id": "50657fa2e2a0e8a46278d922e99cc96b",
+     "url": "/_blob/50657fa2e2a0e8a46278d922e99cc96b",
+     "kapsyen": ""
+    },
+    {
+     "id": "233fb509f08c4178aab08e74b4ff5781",
+     "url": "/_blob/233fb509f08c4178aab08e74b4ff5781",
+     "kapsyen": ""
+    },
+    {
+     "id": "d1465e236089a5c45cfbd7a7ee093667",
+     "url": "/_blob/d1465e236089a5c45cfbd7a7ee093667",
+     "kapsyen": ""
+    }
+   ],
+   "tarikhKemaskini": "2025-11-28",
+   "updatedAt": "2025-11-28T00:00:00.000Z",
+   "nota": "Diimport daripada Laporan_Single_Page_N101_Nov25.pptx",
+   "savedAt": "2025-11-28T00:00:00.000Z"
+  },
+  "projects/N101/sejarah/p55-sep26": {
+   "aktiviti": [
+    "Kerja pengalihan utiliti – telah selesai",
+    "Kerja-kerja tembok penahan – telah selesai",
+    "Kerja-kerja longkang dan saliran – telah selesai",
+    "Kerja akan datang: pelebaran jalan, premix dan perabot jalan"
+   ],
+   "bayaran": [
+    {
+     "tarikh": "2025-09-30",
+     "tahun": "2025",
+     "amaun": 0.0,
+     "jenis": "Bayaran Interim No. 1",
+     "catatan": ""
+    },
+    {
+     "tarikh": "2025-10-31",
+     "tahun": "2025",
+     "amaun": 19000.0,
+     "jenis": "Bayaran Interim No. 2",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2025",
+     "amaun": 0.0,
+     "jenis": "Bayaran Interim No. 3",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2025",
+     "amaun": 76140.0,
+     "jenis": "Bayaran Interim No. 4",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2026",
+     "amaun": 0.0,
+     "jenis": "Bayaran Interim No. 5",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2026",
+     "amaun": 163900.0,
+     "jenis": "Bayaran Interim No. 6",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2026",
+     "amaun": 71700.0,
+     "jenis": "Bayaran Interim No. 7",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2026",
+     "amaun": 132400.0,
+     "jenis": "Bayaran Interim No. 8",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2026",
+     "amaun": 15000.0,
+     "jenis": "Bayaran Interim No. 9",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2026",
+     "amaun": 31250.0,
+     "jenis": "Bayaran Interim No. 10",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2026",
+     "amaun": 656700.0,
+     "jenis": "Bayaran Interim No. 11",
+     "catatan": ""
+    }
+   ],
+   "belanja": 1076710.4,
+   "dun": "N16 SERI MENANTI",
+   "fizJadual": 60,
+   "fizSebenar": 57,
+   "gambar": [
+    {
+     "id": "50657fa2e2a0e8a46278d922e99cc96b",
+     "kapsyen": "",
+     "url": "/_blob/50657fa2e2a0e8a46278d922e99cc96b"
+    },
+    {
+     "id": "233fb509f08c4178aab08e74b4ff5781",
+     "kapsyen": "",
+     "url": "/_blob/233fb509f08c4178aab08e74b4ff5781"
+    },
+    {
+     "id": "d1465e236089a5c45cfbd7a7ee093667",
+     "kapsyen": "",
+     "url": "/_blob/d1465e236089a5c45cfbd7a7ee093667"
+    }
+   ],
+   "isu": [
+    "Kemajuan fizikal lewat 3% (7 hari) berbanding jadual"
+   ],
+   "kewJadual": "",
+   "kewSebenar": 16.92,
+   "kod": "N101",
+   "kontraktor": "RANCANG BIJAK SDN BHD",
+   "kos": 6891415,
+   "noKontrak": "JKR/NS/N/KP/019/2025",
+   "parlimen": "KUALA PILAH",
+   "peringkat": "Pembinaan",
+   "peruntukan": 4000000,
+   "peta": {
+    "id": "291825d03f339aac6da4475c4f2942e7",
+    "url": "/_blob/291825d03f339aac6da4475c4f2942e7"
+   },
+   "pp": "JURUTERA DAERAH JKR KUALA PILAH",
+   "skop": [
+    "Kerja awalan",
+    "Kerja pembersihan dan perobohan",
+    "Kerja longkang dan pembentung",
+    "Kerja turapan jalan",
+    "Pemasangan perabot jalan",
+    "Pembinaan tembok penahan",
+    "Kawalan trafik",
+    "Pengalihan utiliti"
+   ],
+   "statusManual": "",
+   "tahunBelanja": "2026",
+   "tajuk": "Kerja-kerja Penyelenggaraan Jalan di Laluan Ampang Tinggi - Kuala Pilah (N3) dan Lain-lain Kerja Berkaitan dalam Daerah Kuala Pilah",
+   "tarikhKemaskini": "2026-09-30",
+   "tarikhMilik": "2025-09-18",
+   "tarikhSiap": "2027-03-17",
+   "tempoh": 78,
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "wpp": "JURUTERA JALAN JKR KUALA PILAH",
+   "program": "41000",
+   "kategori": "Sambungan",
+   "pelaksanaan": "Dalam Pelaksanaan",
+   "daerah": "KUALA PILAH",
+   "kosKeseluruhan": 12500000,
+   "perunding": "Pro Design Engineering Sdn. Bhd.",
+   "perundingKos": 645540,
+   "tanggungan": 0,
+   "catatan": "PERUNDING: Pro Design Engineering Sdn. Bhd. (Kos Kontrak : RM645,540.00), 17.11.2023 - 16.8.2027\nBayaran Perunding 2023: Interim No 1 : RM92,021.25\nBayaran Perunding 2024: Interim No.2 : RM184,042.50; Interim No.3 : RM1,165.89\nBayaran 2025: Bayaran Iklan (Media Prima Omnia) : RM 4,860.00\nBayaran 2026: Bayaran Jilid Dokumen Kontrak : RM5,760.40\n\nKONTRAKTOR: Rancang Bijak Sdn. Bhd.\nIklan Tender : 17 April 2025\nTaklimat dan lawatan tapak : 29 April 2025\nTarikh tutup tender : 3 Jun 2025\nLewat 3% (7 hari)\n\nKerja telah selesai: Kerja pengalihan utiliti; Kerja-kerja tembok penahan; Kerja-kerja longkang dan saliran\nKerja akan datang: Kerja pelebaran jalan; Kerja premix; Kerja perabot jalan",
+   "baki": 2923289.6,
+   "nota": "Dikemaskini daripada Laporan P55 (30 Sept 2026)",
+   "savedAt": "2026-09-30T00:00:00.000Z"
+  },
+  "projects/N141/sejarah/p55-sep26": {
+   "kosKeseluruhan": 6000000,
+   "perunding": "",
+   "perundingKos": "",
+   "tanggungan": 0,
+   "tahunBelanja": "2026",
+   "statusManual": "",
+   "kewJadual": "",
+   "kewSebenar": "",
+   "bayaran": [],
+   "aktiviti": [
+    "Dalam proses perolehan (penilaian sebut harga)"
+   ],
+   "isu": [],
+   "skop": [],
+   "gambar": [],
+   "peta": null,
+   "catatan": "Dalam proses perolehan (Penilaian sebutharga)\nIklan : 28 Julai 2026\nLawatan Tapak : 4 Ogos 2026\nTarikh Tutup : 19 Ogos 2026",
+   "pp": "",
+   "wpp": "",
+   "noKontrak": "",
+   "parlimen": "",
+   "tarikhKemaskini": "2026-09-30",
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "kod": "N141",
+   "program": "41000",
+   "kategori": "Baharu",
+   "pelaksanaan": "Pra Pelaksanaan",
+   "peringkat": "Perolehan",
+   "tajuk": "Menaiktaraf Jalan Pelangai - Terentang (N141), Daerah Kuala Pilah",
+   "daerah": "KUALA PILAH",
+   "dun": "N15 JUASSEH",
+   "kontraktor": "",
+   "kos": "",
+   "tarikhMilik": "",
+   "tarikhSiap": "",
+   "tempoh": "",
+   "fizJadual": "",
+   "fizSebenar": "",
+   "peruntukan": 485000,
+   "belanja": 0,
+   "baki": 485000.0,
+   "nota": "Dikemaskini daripada Laporan P55 (30 Sept 2026)",
+   "savedAt": "2026-09-30T00:00:00.000Z"
+  },
+  "projects/43000-1/sejarah/p55-sep26": {
+   "kosKeseluruhan": 13450000,
+   "perunding": "Persada Consultancy (Tapak Bina & C&S)",
+   "perundingKos": 776314.89,
+   "tanggungan": 0,
+   "tahunBelanja": "2026",
+   "statusManual": "",
+   "kewJadual": "",
+   "kewSebenar": 89.3,
+   "bayaran": [
+    {
+     "tarikh": "",
+     "tahun": "2024",
+     "amaun": 0.0,
+     "jenis": "Bayaran Interim No. 1",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2024",
+     "amaun": 193700.0,
+     "jenis": "Bayaran Interim No. 2",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2024",
+     "amaun": 475800.0,
+     "jenis": "Bayaran Interim No. 3",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2024",
+     "amaun": 637500.0,
+     "jenis": "Bayaran Interim No. 4",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2024",
+     "amaun": 693000.0,
+     "jenis": "Bayaran Interim No. 5",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2025",
+     "amaun": 126600.0,
+     "jenis": "Bayaran Interim No. 6",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2025",
+     "amaun": 190400.0,
+     "jenis": "Bayaran Interim No. 7",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2025",
+     "amaun": 225300.0,
+     "jenis": "Bayaran Interim No. 8",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2025",
+     "amaun": 355300.0,
+     "jenis": "Bayaran Interim No. 9",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2025",
+     "amaun": 159800.0,
+     "jenis": "Bayaran Interim No. 10",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2025",
+     "amaun": 868100.0,
+     "jenis": "Bayaran Interim No. 11",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2025",
+     "amaun": 213200.0,
+     "jenis": "Bayaran Interim No. 12",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2025",
+     "amaun": 499400.0,
+     "jenis": "Bayaran Interim No. 13",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2025",
+     "amaun": 889000.0,
+     "jenis": "Bayaran Interim No. 14",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2025",
+     "amaun": 931700.0,
+     "jenis": "Bayaran Interim No. 15",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2025",
+     "amaun": 274200.0,
+     "jenis": "Bayaran Interim No. 16",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2025",
+     "amaun": 1103900.0,
+     "jenis": "Bayaran Interim No. 17",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2025",
+     "amaun": 461400.0,
+     "jenis": "Bayaran Interim No. 18",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2025",
+     "amaun": 146421.89,
+     "jenis": "Bayaran Interim No. 19",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2026",
+     "amaun": 1038800.0,
+     "jenis": "Bayaran Interim No. 20",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2026",
+     "amaun": 17300.0,
+     "jenis": "Bayaran Interim No. 21",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2026",
+     "amaun": 48900.0,
+     "jenis": "Bayaran Interim No. 22",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2026",
+     "amaun": 39600.0,
+     "jenis": "Bayaran Interim No. 23",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2026",
+     "amaun": 39700.0,
+     "jenis": "Bayaran Interim No. 24",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2026",
+     "amaun": 165900.0,
+     "jenis": "Bayaran Interim No. 25",
+     "catatan": ""
+    },
+    {
+     "tarikh": "",
+     "tahun": "2026",
+     "amaun": 611700.0,
+     "jenis": "Bayaran Interim No. 26",
+     "catatan": ""
+    }
+   ],
+   "aktiviti": [
+    "Kerja fizikal siap 100%"
+   ],
+   "isu": [],
+   "skop": [],
+   "gambar": [],
+   "peta": null,
+   "catatan": "KONTRAKTOR: Jejak Teknologi Sdn. Bhd.\nSurat setuju terima (SST) pada 6 Jun 2024\nTarikh siap asal : 17.6.2026 · EOT 1 (78 hari) : 3.9.2026\nSalur ke JKR Seremban RM2,000,000.00\n\nPERUNDING: Persada Consultancy (Tapak Bina & C&S), 7.8.2020 - 6.2.2024, lanjutan 6.8.2027\nBayaran Perunding (SS): 2021 = RM 61,436.13; 2022 = RM 108,895.13; 2023 = RM 87,806.44\nBayaran Perunding (C&S): 2020 = RM 171,312.96; 2021 = RM 36,834.10; 2023 = RM 13,636.17\nBayaran Iklan 2023 (Media Prima Omnia) = RM10,303.20\nBayaran Kos Waylif kepada KTMB (2024) = RM125,000.00\nNAA REKA LEGACY (Dok. Kontrak) = RM 4,006.40\nBayaran Perunding 2024: Interim No.5 = RM1,113.00; No.6 = RM13,542.34\nBayaran Perunding 2025: No.7 = RM13,542.34; No.8 = RM27,084.67; No.9 = RM13,542.34; No.10 = RM27,084.67; No.11 = RM27,084.67; No.12 = RM27,084.67; No.13 = RM1,160.08; No.14 = RM27,084.67\nBayaran Perunding 2026: No.15 = RM45,702.83; No.16 = RM27,084.67; No.17 = RM27,084.67",
+   "pp": "",
+   "wpp": "",
+   "noKontrak": "",
+   "parlimen": "",
+   "tarikhKemaskini": "2026-09-30",
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "kod": "43000-1",
+   "program": "43000",
+   "kategori": "Sambungan",
+   "pelaksanaan": "Siap",
+   "peringkat": "Siap",
+   "tajuk": "Membina Jambatan Baharu di Kampung Batang Benar ke Kawasan Industri Nilai, Daerah Seremban (Tender Semula)",
+   "daerah": "SEREMBAN",
+   "dun": "N10 NILAI",
+   "kontraktor": "Jejak Teknologi Sdn. Bhd.",
+   "kos": 11653374.5,
+   "tarikhMilik": "2024-06-20",
+   "tarikhSiap": "2026-09-03",
+   "tempoh": 115,
+   "fizJadual": 100,
+   "fizSebenar": 100,
+   "peruntukan": 3600000,
+   "belanja": 2075314.51,
+   "baki": 1524685.49,
+   "nota": "Dikemaskini daripada Laporan P55 (30 Sept 2026)",
+   "savedAt": "2026-09-30T00:00:00.000Z"
+  },
+  "projects/44000-1/sejarah/p55-sep26": {
+   "kosKeseluruhan": 7000000,
+   "perunding": "",
+   "perundingKos": "",
+   "tanggungan": 0,
+   "tahunBelanja": "2026",
+   "statusManual": "",
+   "kewJadual": "",
+   "kewSebenar": "",
+   "bayaran": [],
+   "aktiviti": [
+    "Kontraktor telah dilantik (SST 9 Sept 2026)",
+    "Milik tapak 22 Sept 2026"
+   ],
+   "isu": [],
+   "skop": [],
+   "gambar": [],
+   "peta": null,
+   "catatan": "Telah melantik kontraktor.\nTarikh SST : 9 Sept 2026\nTarikh Milik Tapak : 22 Sept 2026\nTarikh Siap : 19 Julai 2027\n\nIklan Notis Sebutharga : 18.06.2026\nLawatan Tapak : 25.06.2026\nTarikh Tutup : 08.07.2026",
+   "pp": "",
+   "wpp": "",
+   "noKontrak": "",
+   "parlimen": "",
+   "tarikhKemaskini": "2026-09-30",
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "kod": "44000-1",
+   "program": "44000",
+   "kategori": "Sambungan",
+   "pelaksanaan": "Dalam Pelaksanaan",
+   "peringkat": "Pembinaan",
+   "tajuk": "Membaiki Persimpangan Merbahaya dan Lain-lain Kerja Berkaitan di Persimpangan Jalan Juasseh Jemapoh N162 ke Jalan Kuala Pilah - Batu Kikir, Daerah Kuala Pilah",
+   "daerah": "KUALA PILAH",
+   "dun": "N15 JUASSEH",
+   "kontraktor": "AE MEGA SDN. BHD.",
+   "kos": "",
+   "tarikhMilik": "2026-09-22",
+   "tarikhSiap": "2027-07-19",
+   "tempoh": 43,
+   "fizJadual": 0,
+   "fizSebenar": 0,
+   "peruntukan": 200000,
+   "belanja": 0,
+   "baki": 200000.0,
+   "nota": "Dikemaskini daripada Laporan P55 (30 Sept 2026)",
+   "savedAt": "2026-09-30T00:00:00.000Z"
+  },
+  "projects/44000-2/sejarah/p55-sep26": {
+   "kosKeseluruhan": 1000000,
+   "perunding": "",
+   "perundingKos": "",
+   "tanggungan": 0,
+   "tahunBelanja": "2026",
+   "statusManual": "",
+   "kewJadual": "",
+   "kewSebenar": "",
+   "bayaran": [],
+   "aktiviti": [],
+   "isu": [
+    "Projek digugurkan – dicadangkan dilaksanakan di bawah Peruntukan Penyenggaraan Jalan Negeri (MARRIS)"
+   ],
+   "skop": [],
+   "gambar": [],
+   "peta": null,
+   "catatan": "Projek digugurkan kerana berdasarkan perbincangan bersama Dato' Pengarah JKRNS dan YAB Dato' Seri Utama Haji Aminuddin bin Harun, Menteri Besar Negeri Sembilan pada 2 Disember 2025, YAB Menteri Besar mencadangkan projek ini dilaksanakan di bawah Peruntukan Penyenggaraan Jalan Negeri (MARRIS).",
+   "pp": "",
+   "wpp": "",
+   "noKontrak": "",
+   "parlimen": "",
+   "tarikhKemaskini": "2026-09-30",
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "kod": "44000-2",
+   "program": "44000",
+   "kategori": "Sambungan",
+   "pelaksanaan": "Batal",
+   "peringkat": "Batal",
+   "tajuk": "Membaiki Persimpangan Merbahaya di Seksyen 7.4, Jalan Kuala Klawang - Genting Peras N32, Daerah Jelebu",
+   "daerah": "JELEBU",
+   "dun": "N01 CHENNAH",
+   "kontraktor": "",
+   "kos": "",
+   "tarikhMilik": "",
+   "tarikhSiap": "",
+   "tempoh": "",
+   "fizJadual": "",
+   "fizSebenar": "",
+   "peruntukan": 500000,
+   "belanja": 0,
+   "baki": 500000.0,
+   "nota": "Dikemaskini daripada Laporan P55 (30 Sept 2026)",
+   "savedAt": "2026-09-30T00:00:00.000Z"
+  },
+  "projects/47000-1/sejarah/p55-sep26": {
+   "kosKeseluruhan": 200000,
+   "perunding": "",
+   "perundingKos": "",
+   "tanggungan": 0,
+   "tahunBelanja": "2026",
+   "statusManual": "",
+   "kewJadual": "",
+   "kewSebenar": "",
+   "bayaran": [],
+   "aktiviti": [
+    "Kerja ukur telah siap"
+   ],
+   "isu": [],
+   "skop": [],
+   "gambar": [],
+   "peta": null,
+   "catatan": "Di bawah butiran: Kerja Ukur, Hak Milik Sambungan (Pre-Com) dan Pelbagai Kajian Kerja Kejuruteraan Jalan Negeri dan Kerja-kerja Berkaitan (peruntukan RM200,000)\nSurat Setuju Terima telah dikeluarkan pada 17 Mac 2026\nTarikh Mula : 01/04/2026\nTarikh Siap : 21/07/2026\nTelah siap",
+   "pp": "",
+   "wpp": "",
+   "noKontrak": "",
+   "parlimen": "",
+   "tarikhKemaskini": "2026-09-30",
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "kod": "47000-1",
+   "program": "47000",
+   "kategori": "Sambungan",
+   "pelaksanaan": "Siap",
+   "peringkat": "Siap",
+   "tajuk": "Kerja-kerja Ukur Topografi dan UDM bagi Cadangan Projek Membina Jalan Baharu dari Taman Bukit Senawang Perdana ke Jalan Seremban-Tampin (FT001), Daerah Seremban",
+   "daerah": "SEREMBAN",
+   "dun": "N25 PAROI",
+   "kontraktor": "Ukur Sepakat",
+   "kos": 146571.43,
+   "tarikhMilik": "2026-04-01",
+   "tarikhSiap": "2026-07-21",
+   "tempoh": 16,
+   "fizJadual": 100,
+   "fizSebenar": 100,
+   "peruntukan": 200000,
+   "belanja": 152085.83,
+   "baki": 47914.17,
+   "nota": "Dikemaskini daripada Laporan P55 (30 Sept 2026)",
+   "savedAt": "2026-09-30T00:00:00.000Z"
+  },
+  "config/tetapan": {
+   "kuning": 5,
+   "merah": 20
+  }
+ }
+}
