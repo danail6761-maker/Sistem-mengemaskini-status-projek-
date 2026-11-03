@@ -40,3 +40,9 @@ Apabila dibuka sebagai artifact di claude.ai, sistem menggunakan pangkalan data 
 | `img/` | Peta dan gambar tapak projek |
 
 Sumber data: *Laporan Peruntukan Pembangunan Negeri Tahun 2026 (P55), 30 Sept 2026* dan *Laporan Single Page N101 (Nov 2025)*.
+
+## Cloudflare
+
+Sistem ini dihoskan di **https://sistem-status-projek-p55.danail6761.workers.dev**.
+
+Worker dalam `cloudflare/worker.js` menghidangkan `index.html`, `data/*.json` dan `img/*` terus daripada cawangan `main` repo ini. Setiap commit ke `main` akan muncul di laman Cloudflare dalam masa lebih kurang 1 minit, tanpa perlu deploy semula. Fail lain dalam repo (seperti README) tidak dihidangkan.
