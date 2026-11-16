@@ -162,6 +162,10 @@ label.f{display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:60
 .imgcard .ph0{width:100%;aspect-ratio:4/3;border:1px dashed var(--line);border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;text-align:center;padding:8px}
 .stick{position:sticky;bottom:0;background:var(--bg);padding-block:12px calc(12px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap;align-items:center;z-index:5}
 .confirm{display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:var(--bad-soft);color:var(--bad);padding:8px 12px;border-radius:6px;font-weight:600}
+.dlstatus{margin:-4px 0 14px;padding:10px 14px;border-radius:6px;background:var(--surface);border:1px solid var(--line);font-size:14px}
+.dlstatus.ok{background:var(--ok-soft);border-color:transparent}
+.dlstatus.err{background:var(--bad-soft);color:var(--bad);border-color:transparent;font-weight:600}
+.dlstatus a{color:inherit;font-weight:700}
 .readonly-note{background:var(--warn-soft);color:var(--fg);border-radius:6px;padding:10px 14px;margin-top:14px}
 
 @media (max-width:860px){.summary{grid-template-columns:repeat(2,minmax(0,1fr))}.fgrid.c4{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -187,7 +191,6 @@ label.f{display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:60
   <div class="notice" id="boot">Memuatkan senarai projek…</div>
 </main>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pptxgenjs/3.12.0/pptxgen.bundle.js"></script>
 <script>
 (function(){
 "use strict";
@@ -390,13 +393,13 @@ function viewReport(id){
   app.innerHTML=`<div class="reporthead"><div class="grow"><h1>${esc(p.kod)}</h1><div class="row"><span class="pill ${s}">${STATUS[s]}</span><span class="tag">${esc(p.pelaksanaan||"–")}</span><span class="small muted">Kemaskini terakhir ${tarikh(p.tarikhKemaskini)}${p.updatedBy?` oleh <span data-uid="${esc(p.updatedBy)}">…</span>`:""}</span></div></div>
     <button type="button" id="dlBtn">Muat turun PPTX</button>
     <button type="button" class="primary" id="edBtn">Kemaskini status</button></div>
+    <div id="dlStatus" class="dlstatus" role="status" aria-live="polite" hidden></div>
     ${reportHTML(p)}
     ${p.catatan?`<section class="panel" aria-labelledby="ch"><h2 id="ch">Catatan (Laporan P55)</h2><pre>${esc(p.catatan)}</pre></section>`:""}
     ${(p.bayaran||[]).length>BY_MAX?`<section class="panel" aria-labelledby="bh"><h2 id="bh">Semua bayaran kemajuan</h2><div class="scroll"><table class="num"><thead><tr><th>Jenis</th><th>Tahun / tarikh</th><th class="r">Amaun (RM)</th><th>Catatan</th></tr></thead><tbody>${p.bayaran.map(r=>`<tr><td>${esc(r.jenis)}</td><td>${tarikhDot(r.tarikh)||esc(r.tahun||"")}</td><td class="r">${fmt2(r.amaun)}</td><td>${esc(r.catatan||"")}</td></tr>`).join("")}</tbody></table></div></section>`:""}
     <section class="panel" aria-labelledby="hh"><h2 id="hh">Sejarah kemaskini</h2><div id="histBody" class="small muted" style="margin-top:8px">Memuatkan sejarah…</div></section>`;
   $("#edBtn").onclick=()=>go("kemaskini-"+id);
   $("#dlBtn").onclick=()=>downloadPptx(p);
-  if(!downloads)$("#dlBtn").hidden=true;
   fillNames();
   if(histFor!==id){
     if(histUnsub)histUnsub();
@@ -633,9 +636,46 @@ async function toDataURL(src){
   const r=await fetch(src);if(!r.ok)throw new Error("img");const b=await r.blob();
   return await new Promise((res,rej)=>{const fr=new FileReader();fr.onload=()=>res(fr.result);fr.onerror=rej;fr.readAsDataURL(b)});
 }
+/* Pustaka PPTX: cuba salinan sendiri dahulu (mod tempatan), kemudian beberapa CDN */
+function loadScript(src){return new Promise((res,rej)=>{const s=document.createElement("script");s.src=src;s.async=true;s.onload=res;s.onerror=()=>{s.remove();rej(new Error(src))};document.head.appendChild(s)})}
+async function getPptx(){
+  if(window.PptxGenJS)return window.PptxGenJS;
+  const srcs=(LOCAL?["vendor/pptxgen.bundle.js"]:[]).concat(["https://cdnjs.cloudflare.com/ajax/libs/pptxgenjs/3.12.0/pptxgen.bundle.js","https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js","https://unpkg.com/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"]);
+  for(const src of srcs){try{await loadScript(src);if(window.PptxGenJS)return window.PptxGenJS}catch(e){}}
+  throw new Error("Pustaka PPTX tidak dapat dimuatkan. Semak sambungan internet dan cuba lagi.");
+}
+function dlStatus(html,kind){const el=$("#dlStatus");if(!el)return;el.hidden=!html;el.className="dlstatus "+(kind||"");el.innerHTML=html||""}
+const MIME={pptx:"application/vnd.openxmlformats-officedocument.presentationml.presentation",json:"application/json"};
+const isMobile=()=>/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&/Mac/.test(navigator.platform||""));
+let lastUrl=null;
+/* Simpan fail: claude.ai guna kebenaran muat turun; di luar claude.ai guna Kongsi (telefon) atau pautan muat turun biasa */
+async function saveFile(filename,blob){
+  const ext=filename.split(".").pop();
+  if(!LOCAL){
+    if(!downloads)throw{userMsg:"Muat turun tidak tersedia dalam paparan ini. Buka sistem melalui pelayar web (claude.ai atau pautan Cloudflare) untuk muat turun."};
+    try{await downloads.save({filename,data:blob});return"saved"}
+    catch(e){
+      const c=e&&e.code;
+      if(c==="declined")return"cancel";
+      if(c==="rate_limited")throw{userMsg:"Satu muat turun sedang menunggu pengesahan. Tunggu sebentar dan cuba lagi."};
+      if(c==="too_large")throw{userMsg:"Fail terlalu besar untuk paparan ini."};
+      throw{userMsg:"Paparan ini tidak membenarkan muat turun fail ."+ext+" ("+(c||"ralat")+"). Cuba buka sistem melalui pautan Cloudflare di pelayar web."};
+    }
+  }
+  const file=new File([blob],filename,{type:MIME[ext]||blob.type||"application/octet-stream"});
+  if(isMobile()&&navigator.canShare&&navigator.share){
+    try{if(navigator.canShare({files:[file]})){await navigator.share({files:[file],title:filename});return"saved"}}
+    catch(e){if(e&&e.name==="AbortError")return"cancel"}
+  }
+  if(lastUrl)URL.revokeObjectURL(lastUrl);
+  lastUrl=URL.createObjectURL(file);
+  const a=document.createElement("a");a.href=lastUrl;a.download=filename;a.rel="noopener";document.body.appendChild(a);a.click();a.remove();
+  return{url:lastUrl};
+}
 async function downloadPptx(p){
-  const btn=$("#dlBtn");btn.disabled=true;btn.textContent="Menjana…";
+  const btn=$("#dlBtn");btn.disabled=true;btn.textContent="Menjana…";dlStatus("Menjana fail PPTX…");
   try{
+    const PptxGenJS=await getPptx();
     const pres=new PptxGenJS();
     pres.defineLayout({name:"A4P",width:7.5,height:10.833});pres.layout="A4P";
     pres.title="Laporan Single Page "+(p.kod||"");pres.author="JKR";
@@ -685,9 +725,12 @@ async function downloadPptx(p){
     const blob=await pres.write({outputType:"blob"});
     const d=new Date((p.tarikhKemaskini||today())+"T00:00:00");
     const fn="Laporan_Single_Page_"+(slug(p.kod)||"Projek")+"_"+BLN3[d.getMonth()]+String(d.getFullYear()).slice(2)+".pptx";
-    await downloads.save({filename:fn,data:blob});
+    const r=await saveFile(fn,blob);
+    if(r==="cancel")dlStatus("Muat turun dibatalkan.");
+    else if(r&&r.url)dlStatus(`Fail <b>${esc(fn)}</b> sedia. Jika muat turun tidak bermula, <a href="${r.url}" download="${esc(fn)}">tekan di sini</a> (di telefon: tekan lama, pilih Muat turun pautan).`,"ok");
+    else dlStatus(`Fail <b>${esc(fn)}</b> telah dihantar untuk disimpan.`,"ok");
   }catch(e){
-    if(e&&e.code!=="declined")toast("Muat turun gagal: "+((e&&(e.message||e.code))||e));
+    dlStatus("Muat turun gagal: "+esc((e&&(e.userMsg||e.message||e.code))||String(e)),"err");
   }finally{btn.disabled=false;btn.textContent="Muat turun PPTX"}
 }
 
@@ -718,17 +761,13 @@ function makeLocalDb(initial){
       add:async d=>{const r=doc(coll+"/"+rid());await r.set(d);return r}}}
   return{doc,collection:c=>query(c),dump:()=>clone(store),load:s=>{store=clone(s);persist()}};
 }
-const localDownloads={save:async({filename,data})=>{
-  const u=URL.createObjectURL(data instanceof Blob?data:new Blob([data]));
-  const a=document.createElement("a");a.href=u;a.download=filename;document.body.appendChild(a);a.click();a.remove();
-  setTimeout(()=>URL.revokeObjectURL(u),10000);return{status:"saved"}}};
 const localAssets={upload:async blob=>{const url=await new Promise((res,rej)=>{const fr=new FileReader();fr.onload=()=>res(fr.result);fr.onerror=rej;fr.readAsDataURL(blob)});return{id:"",url,sizeBytes:blob.size,contentType:blob.type}}};
 const localUser={id:async()=>"",can:async()=>true,profiles:async()=>({})};
 async function startLocal(){
   LOCAL=true;
   let saved=null;try{saved=JSON.parse(localStorage.getItem(LKEY)||"null")}catch(e){}
   if(!saved){try{const r=await fetch("data/seed.json",{cache:"no-store"});saved=r.ok?(await r.json()).dokumen:{}}catch(e){saved={}}}
-  db=makeLocalDb(saved||{});assets=localAssets;downloads=localDownloads;user=localUser;canWrite=true;
+  db=makeLocalDb(saved||{});assets=localAssets;downloads=null;user=localUser;canWrite=true;
 }
 function localTools(){
   if(!LOCAL)return"";
@@ -737,7 +776,7 @@ function localTools(){
 function bindLocalTools(){
   if(!LOCAL)return;
   const e=$("#expBtn"),i=$("#impIn");
-  if(e)e.onclick=()=>{const d=new Date();localDownloads.save({filename:"data-status-projek-"+today()+".json",data:new Blob([JSON.stringify({versi:1,dieksport:today(),dokumen:db.dump()},null,1)],{type:"application/json"})});toast("Data dieksport")};
+  if(e)e.onclick=async()=>{try{const r=await saveFile("data-status-projek-"+today()+".json",new Blob([JSON.stringify({versi:1,dieksport:today(),dokumen:db.dump()},null,1)],{type:"application/json"}));if(r!=="cancel")toast("Data dieksport")}catch(err){toast("Eksport gagal: "+(err.userMsg||err.message))}};
   if(i)i.onchange=async()=>{const f=i.files[0];if(!f)return;try{const j=JSON.parse(await f.text());if(!j||typeof j.dokumen!=="object")throw new Error("format");db.load(j.dokumen);toast("Data diimport")}catch(err){toast("Fail tidak sah. Pilih fail JSON yang dieksport daripada sistem ini.")}};
 }
 
