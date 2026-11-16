@@ -70,7 +70,7 @@ button:disabled{opacity:.55;cursor:default}
 .chip b{font-family:var(--f-display);font-size:18px}
 .chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
 .tablebox{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow-x:auto}
-table.list{width:100%;border-collapse:collapse;min-width:1040px}
+table.list{width:100%;border-collapse:collapse;min-width:1240px}
 table.list th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:left;font-weight:600;padding:10px 12px;border-bottom:1px solid var(--line);background:var(--surface2)}
 table.list th.r{text-align:right}
 table.list td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
@@ -78,7 +78,7 @@ table.list tr.grp td{background:var(--accent-soft);font-weight:700;font-size:13p
 table.list tr.click{cursor:pointer} table.list tr.click:hover td{background:var(--surface2)}
 table.list tfoot td{font-weight:700;background:var(--surface2);border-bottom:0}
 .kod{font-family:var(--f-display);font-weight:700;font-size:17px;letter-spacing:.03em;white-space:nowrap}
-.ptitle{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-width:380px;font-weight:500}
+.ptitle{min-width:230px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-width:380px;font-weight:500}
 .pill{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font-size:13px;font-weight:600;white-space:nowrap}
 .pill::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
 .pill.hijau{background:var(--ok-soft);color:var(--ok)} .pill.kuning{background:var(--warn-soft);color:var(--warn)} .pill.merah{background:var(--bad-soft);color:var(--bad)}
@@ -129,6 +129,9 @@ details.tetapan summary{cursor:pointer;font-weight:600}
 .sheet .skop ol{padding-left:20px}
 .sheet .foot{margin-top:10px;font-family:Arial,sans-serif;font-weight:700;font-size:13px}
 .sheet .foot span{font-weight:400}
+.sheet.print{box-shadow:none;border-radius:0;max-width:none;width:880px}
+.sheet.print .grid{grid-template-columns:36% 1fr!important}
+.sheet.print .col.left{order:0!important}
 .reporthead{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:20px 0 14px}
 .reporthead .grow{flex:1;min-width:200px}
 .panel{max-width:880px;margin:22px auto 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px}
@@ -201,7 +204,7 @@ const PELAKSANAAN=["Belum Mula","Pra Pelaksanaan","Dalam Pelaksanaan","Siap","Ba
 const PROGRAM={"41000":"Menaiktaraf Jalan Negeri","42000":"Membina Jalan Baharu","43000":"Mengganti Jambatan Negeri","44000":"Membaiki Persimpangan / Selekoh Merbahaya di Jalan Negeri","47000":"Kerja Ukur, Penyiasatan Tapak & Reka Bentuk Kejuruteraan & Kerja Awalan","49000":"Pelbagai Kajian"};
 const STATUS={hijau:"Mengikut jadual",kuning:"Lewat",merah:"Projek sakit",na:"Belum dinilai",batal:"Batal"};
 const LAMPU={hijau:"00B050",kuning:"FFC000",merah:"E00000",na:"A6A6A6",batal:"A6A6A6"};
-const MONEY=["kos","kosKeseluruhan","perundingKos","peruntukan","tanggungan","belanja"];
+const MONEY=["kos","kosKeseluruhan","perundingKos","peruntukan","sekatan","tanggungan","belanja"];
 const $=(s,r=document)=>r.querySelector(s);
 const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const num=v=>{const n=parseFloat(String(v==null?"":v).replace(/,/g,""));return isFinite(n)?n:0};
@@ -225,7 +228,7 @@ function imgSrc(im){
   if(im.id)return LOCAL?"img/"+im.id+".jpg":"/_blob/"+im.id;
   return im.url||"";
 }
-function baki(p){return num(p.peruntukan)-num(p.tanggungan)-num(p.belanja)}
+function baki(p){return num(p.peruntukan)-num(p.tanggungan)-num(p.belanja)-num(p.sekatan)}
 function toast(msg){const t=document.createElement("div");t.className="toast";t.setAttribute("role","status");t.textContent=msg;document.body.appendChild(t);setTimeout(()=>t.remove(),3200)}
 
 /* Input wang: koma dimasukkan semasa menaip, 2 titik perpuluhan bila keluar */
@@ -282,14 +285,14 @@ function viewList(){
   if(!loaded){app.innerHTML=`<div class="notice">${loadErr?esc(loadErr):"Memuatkan senarai projek…"}</div>`;return}
   const list=Object.values(projects).sort((a,b)=>String(a.program||"9").localeCompare(String(b.program||"9"))||String(a.kod).localeCompare(String(b.kod),undefined,{numeric:true}));
   const pc={};PELAKSANAAN.forEach(k=>pc[k]=0);
-  let tP=0,tB=0,tT=0;
-  list.forEach(p=>{if(pc[p.pelaksanaan]!=null)pc[p.pelaksanaan]++;tP+=num(p.peruntukan);tB+=num(p.belanja);tT+=num(p.tanggungan)});
-  const tK=tP-tB-tT,perc=tP?(tB+tT)/tP*100:0;
+  let tP=0,tB=0,tT=0,tS=0;
+  list.forEach(p=>{if(pc[p.pelaksanaan]!=null)pc[p.pelaksanaan]++;tP+=num(p.peruntukan);tB+=num(p.belanja);tT+=num(p.tanggungan);tS+=num(p.sekatan)});
+  const tK=tP-tB-tT-tS,perc=tP?(tB+tT)/tP*100:0;
   const ql=q.toLowerCase();
   const shown=list.filter(p=>(!fPel||p.pelaksanaan===fPel)&&(!ql||[p.kod,p.tajuk,p.kontraktor,p.noKontrak,p.dun,p.daerah,p.program].join(" ").toLowerCase().includes(ql)));
   let lastProg=null,body="";
   shown.forEach(p=>{
-    if(p.program!==lastProg){lastProg=p.program;body+=`<tr class="grp"><td colspan="9">${esc(p.program||"Tiada program")} · ${esc(PROGRAM[p.program]||"")}</td></tr>`}
+    if(p.program!==lastProg){lastProg=p.program;body+=`<tr class="grp"><td colspan="10">${esc(p.program||"Tiada program")} · ${esc(PROGRAM[p.program]||"")}</td></tr>`}
     const s=statusOf(p),bk=baki(p);
     body+=`<tr class="click" data-id="${esc(p._id)}" tabindex="0">
     <td class="kod">${esc(p.kod||p._id)}</td>
@@ -297,6 +300,7 @@ function viewList(){
     <td><span class="tag">${esc(p.pelaksanaan||"–")}</span></td>
     <td>${has(p.fizJadual)||has(p.fizSebenar)?`<div class="prog"><div class="bar"><div class="fill" style="width:${Math.min(100,num(p.fizSebenar))}%"></div><div class="mark" style="left:${Math.min(100,num(p.fizJadual))}%"></div></div><div class="t num">Sebenar ${pct(p.fizSebenar)} · Jadual ${pct(p.fizJadual)}</div></div>`:`<span class="small muted">–</span>`}</td>
     <td class="num r">${fmt2(p.peruntukan)}</td>
+    <td class="num r">${fmt2(p.sekatan)}</td>
     <td class="num r">${fmt2(num(p.belanja)+num(p.tanggungan))}</td>
     <td class="num r ${bk<0?"neg":""}">${fmt2(bk)}</td>
     <td><span class="pill ${s}">${STATUS[s]}</span></td>
@@ -307,7 +311,7 @@ function viewList(){
     <input class="search" id="q" type="search" placeholder="Cari kod, tajuk, daerah, kontraktor…" value="${esc(q)}" aria-label="Cari projek"></div>
   ${LOCAL?`<div class="readonly-note" style="margin:0 0 14px">Data disimpan dalam pelayar ini sahaja. Gunakan <b>Eksport data</b> untuk simpan salinan atau kongsi, dan <b>Import data</b> untuk muatkan fail daripada rakan.</div>`:""}
   <div class="summary">
-    <div class="tile"><span class="l">Peruntukan</span><span class="v num">${rmShort(tP)}</span><span class="s num">${rm(tP)}</span></div>
+    <div class="tile"><span class="l">Peruntukan</span><span class="v num">${rmShort(tP)}</span><span class="s num">${rm(tP)}${tS?" · sekatan "+rm(tS):""}</span></div>
     <div class="tile"><span class="l">Belanja + tanggungan</span><span class="v num">${rmShort(tB+tT)}</span><span class="s num">${rm(tB+tT)}</span></div>
     <div class="tile"><span class="l">Baki</span><span class="v num">${rmShort(tK)}</span><span class="s num">${rm(tK)}</span></div>
     <div class="tile"><span class="l">Peratus belanja</span><span class="v num">${(Math.round(perc*100)/100)}%</span><div class="meter"><i style="width:${Math.min(100,perc)}%"></i></div></div>
@@ -316,9 +320,9 @@ function viewList(){
     <button type="button" class="chip" data-f="" aria-pressed="${!fPel}"><b>${list.length}</b>Semua</button>
     ${PELAKSANAAN.map(k=>`<button type="button" class="chip" data-f="${k}" aria-pressed="${fPel===k}"><b>${pc[k]}</b>${k}</button>`).join("")}
   </div>
-  ${list.length?`<div class="tablebox"><table class="list"><thead><tr><th>Kod</th><th>Projek</th><th>Pelaksanaan</th><th>Fizikal</th><th class="r">Peruntukan (RM)</th><th class="r">Belanja + Tanggungan (RM)</th><th class="r">Baki (RM)</th><th>Lampu</th><th>Kemaskini</th></tr></thead>
-  <tbody>${body}${shown.length?"":`<tr><td colspan="9" class="muted">Tiada projek sepadan.</td></tr>`}</tbody>
-  <tfoot><tr><td colspan="4">Jumlah (${list.length} projek)</td><td class="num r">${fmt2(tP)}</td><td class="num r">${fmt2(tB+tT)}</td><td class="num r">${fmt2(tK)}</td><td colspan="2"></td></tr></tfoot></table></div>`:`<div class="notice">Belum ada projek. Tekan <b>+ Tambah projek</b> untuk mula.</div>`}
+  ${list.length?`<div class="tablebox"><table class="list"><thead><tr><th>Kod</th><th>Projek</th><th>Pelaksanaan</th><th>Fizikal</th><th class="r">Peruntukan (RM)</th><th class="r">Sekatan (RM)</th><th class="r">Belanja + Tanggungan (RM)</th><th class="r">Baki (RM)</th><th>Lampu</th><th>Kemaskini</th></tr></thead>
+  <tbody>${body}${shown.length?"":`<tr><td colspan="10" class="muted">Tiada projek sepadan.</td></tr>`}</tbody>
+  <tfoot><tr><td colspan="4">Jumlah (${list.length} projek)</td><td class="num r">${fmt2(tP)}</td><td class="num r">${fmt2(tS)}</td><td class="num r">${fmt2(tB+tT)}</td><td class="num r">${fmt2(tK)}</td><td colspan="2"></td></tr></tfoot></table></div>`:`<div class="notice">Belum ada projek. Tekan <b>+ Tambah projek</b> untuk mula.</div>`}
   <details class="tetapan"><summary>Tetapan lampu status</summary>
     <p class="small muted">Lampu dikira daripada beza fizikal (sebenar − jadual), kecuali jika ditetapkan secara manual dalam borang projek. Projek tanpa data fizikal dipaparkan kelabu.</p>
     <div class="fgrid c3">
@@ -366,8 +370,8 @@ function reportHTML(p){
         <table class="st num"><tr><td class="h" colspan="3">Fizikal (%)</td><td class="h" colspan="2">Kewangan (%)</td></tr>
           <tr><td class="h2">Jadual</td><td class="h2">Sebenar</td><td class="h2">Beza</td><td class="h2">Jadual</td><td class="h2">Sebenar</td></tr>
           <tr><td class="v">${pct(p.fizJadual)}</td><td class="v">${pct(p.fizSebenar)}</td><td class="v">${has(p.fizJadual)||has(p.fizSebenar)?sgn(b):"–"}</td><td class="v">${has(p.kewJadual)?num(p.kewJadual):"–"}</td><td class="v">${has(p.kewSebenar)?num(p.kewSebenar):"–"}</td></tr>
-          <tr><td class="pk" rowspan="2" colspan="2">Status Perbelanjaan ${esc(p.tahunBelanja||"")}</td><td class="pk">Peruntukan diterima</td><td class="pk">Belanja${num(p.tanggungan)?" + Tanggungan":""}</td><td class="pk">Baki</td></tr>
-          <tr><td class="pk"><b>${rm(p.peruntukan)}</b></td><td class="pk"><b>${rm(num(p.belanja)+num(p.tanggungan))}</b></td><td class="pk"><b>${rm(bk)}</b></td></tr></table>
+          <tr><td class="pk" rowspan="2">Status Perbelanjaan ${esc(p.tahunBelanja||"")}</td><td class="pk">Peruntukan diterima</td><td class="pk">Jumlah Sekatan</td><td class="pk">Belanja${num(p.tanggungan)?" + Tanggungan":""}</td><td class="pk">Baki</td></tr>
+          <tr><td class="pk"><b>${rm(p.peruntukan)}</b></td><td class="pk"><b>${rm(p.sekatan)}</b></td><td class="pk"><b>${rm(num(p.belanja)+num(p.tanggungan))}</b></td><td class="pk"><b>${rm(bk)}</b></td></tr></table>
         <div class="sec"><b>BAYARAN KEMAJUAN :</b>
           <table class="by num"><tr><th>Tarikh Penilaian</th><th>Amaun Bayaran</th><th>Jenis Bayaran</th></tr>
           ${by.map(r=>`<tr><td>${tarikhDot(r.tarikh)||esc(r.tahun||"")}</td><td class="r">${rm(r.amaun)}${r.catatan?`<br>(${esc(r.catatan)})`:""}</td><td>${esc(r.jenis)}</td></tr>`).join("")}
@@ -392,6 +396,7 @@ function viewReport(id){
   const s=statusOf(p);
   app.innerHTML=`<div class="reporthead"><div class="grow"><h1>${esc(p.kod)}</h1><div class="row"><span class="pill ${s}">${STATUS[s]}</span><span class="tag">${esc(p.pelaksanaan||"–")}</span><span class="small muted">Kemaskini terakhir ${tarikh(p.tarikhKemaskini)}${p.updatedBy?` oleh <span data-uid="${esc(p.updatedBy)}">…</span>`:""}</span></div></div>
     <button type="button" id="dlBtn">Muat turun PPTX</button>
+    <button type="button" id="pdfBtn">Muat turun PDF</button>
     <button type="button" class="primary" id="edBtn">Kemaskini status</button></div>
     <div id="dlStatus" class="dlstatus" role="status" aria-live="polite" hidden></div>
     ${reportHTML(p)}
@@ -400,6 +405,7 @@ function viewReport(id){
     <section class="panel" aria-labelledby="hh"><h2 id="hh">Sejarah kemaskini</h2><div id="histBody" class="small muted" style="margin-top:8px">Memuatkan sejarah…</div></section>`;
   $("#edBtn").onclick=()=>go("kemaskini-"+id);
   $("#dlBtn").onclick=()=>downloadPptx(p);
+  $("#pdfBtn").onclick=()=>downloadPdf(p);
   fillNames();
   if(histFor!==id){
     if(histUnsub)histUnsub();
@@ -446,7 +452,7 @@ async function fillNames(){
 }
 
 /* ---------- Borang ---------- */
-function blank(){return{kod:"",program:"41000",kategori:"Baharu",pelaksanaan:"Belum Mula",tajuk:"",peringkat:"Perancangan",pp:"",wpp:"",kontraktor:"",noKontrak:"",tarikhMilik:"",tarikhSiap:"",tempoh:"",kos:"",kosKeseluruhan:"",perunding:"",perundingKos:"",daerah:"",parlimen:"",dun:"",fizJadual:"",fizSebenar:"",kewJadual:"",kewSebenar:"",tahunBelanja:String(new Date().getFullYear()),peruntukan:"",tanggungan:"",belanja:"",statusManual:"",bayaran:[],aktiviti:[],isu:[],skop:[],catatan:"",peta:null,gambar:[],tarikhKemaskini:today()}}
+function blank(){return{kod:"",program:"41000",kategori:"Baharu",pelaksanaan:"Belum Mula",tajuk:"",peringkat:"Perancangan",pp:"",wpp:"",kontraktor:"",noKontrak:"",tarikhMilik:"",tarikhSiap:"",tempoh:"",kos:"",kosKeseluruhan:"",perunding:"",perundingKos:"",daerah:"",parlimen:"",dun:"",fizJadual:"",fizSebenar:"",kewJadual:"",kewSebenar:"",tahunBelanja:String(new Date().getFullYear()),peruntukan:"",sekatan:"",tanggungan:"",belanja:"",statusManual:"",bayaran:[],aktiviti:[],isu:[],skop:[],catatan:"",peta:null,gambar:[],tarikhKemaskini:today()}}
 function viewForm(id){
   const app=$("#app");
   nav(`<button type="button" id="backBtn">← ${id?"Laporan":"Senarai"}</button>`);
@@ -501,9 +507,10 @@ function viewForm(id){
     <div class="fgrid c3">
       ${f("tahunBelanja","Tahun","number",'step="1" min="2000" max="2100"')}
       ${m("peruntukan","Peruntukan diterima (RM)")}
+      ${m("sekatan","Jumlah Sekatan (RM)")}
       ${m("tanggungan","Tanggungan (RM)")}
       ${m("belanja","Belanja (RM)")}
-      <label class="f">Baki (RM) <span class="hint">Peruntukan − tanggungan − belanja</span><input id="f-baki" type="text" class="money" readonly tabindex="-1"></label>
+      <label class="f">Baki (RM) <span class="hint">Peruntukan − tanggungan − belanja − sekatan</span><input id="f-baki" type="text" class="money" readonly tabindex="-1"></label>
     </div>
   </fieldset>
   <fieldset><legend>3 · Bayaran kemajuan</legend>
@@ -533,10 +540,10 @@ function viewForm(id){
     const fj=$("#f-fizJadual").value,fs=$("#f-fizSebenar").value;const b=num(fs)-num(fj);const o=$("#bezaOut");
     o.textContent=has(fj)||has(fs)?sgn(b):"–";o.className="calc num "+(b<0?"neg":b>0?"pos":"");
     $("#f-tempoh").value=tempohMinggu($("#f-tarikhMilik").value,$("#f-tarikhSiap").value);
-    const bk=num($("#f-peruntukan").value)-num($("#f-tanggungan").value)-num($("#f-belanja").value);
+    const bk=num($("#f-peruntukan").value)-num($("#f-tanggungan").value)-num($("#f-belanja").value)-num($("#f-sekatan").value);
     const be=$("#f-baki");be.value=fmt2(bk);be.style.color=bk<0?"var(--bad)":"";
   };
-  ["fizJadual","fizSebenar","tarikhMilik","tarikhSiap","peruntukan","tanggungan","belanja"].forEach(k=>$("#f-"+k).addEventListener("input",calc));calc();
+  ["fizJadual","fizSebenar","tarikhMilik","tarikhSiap","peruntukan","sekatan","tanggungan","belanja"].forEach(k=>$("#f-"+k).addEventListener("input",calc));calc();
   bindMoney($("#frm"));
   renderBy();renderImgs();
   $("#byAdd").onclick=()=>{collect();p.bayaran.push({tarikh:"",tahun:p.tahunBelanja||"",amaun:"",catatan:"",jenis:"Bayaran Interim No. "+(p.bayaran.length+1)});renderBy();const i=p.bayaran.length-1;const el=$("#by-a-"+i);if(el)el.focus()};
@@ -599,7 +606,7 @@ async function upload(slot,file){
 function collect(){
   const p=draft;if(!p||!$("#frm"))return p;
   const v=k=>{const el=$("#f-"+k);return el?el.value.trim():p[k]};
-  ["kod","program","kategori","pelaksanaan","noKontrak","pp","wpp","kontraktor","kos","kosKeseluruhan","perunding","perundingKos","tarikhMilik","tarikhSiap","daerah","parlimen","dun","fizJadual","fizSebenar","kewJadual","kewSebenar","tahunBelanja","peruntukan","tanggungan","belanja","tarikhKemaskini","peringkat","statusManual","nota"].forEach(k=>p[k]=v(k));
+  ["kod","program","kategori","pelaksanaan","noKontrak","pp","wpp","kontraktor","kos","kosKeseluruhan","perunding","perundingKos","tarikhMilik","tarikhSiap","daerah","parlimen","dun","fizJadual","fizSebenar","kewJadual","kewSebenar","tahunBelanja","peruntukan","sekatan","tanggungan","belanja","tarikhKemaskini","peringkat","statusManual","nota"].forEach(k=>p[k]=v(k));
   p.tajuk=$("#f-tajuk").value.trim();p.catatan=$("#f-catatan").value.trim();
   p.tempoh=tempohMinggu(p.tarikhMilik,p.tarikhSiap);
   p.aktiviti=lines($("#f-aktiviti").value);p.isu=lines($("#f-isu").value);p.skop=lines($("#f-skop").value);
@@ -645,7 +652,7 @@ async function getPptx(){
   throw new Error("Pustaka PPTX tidak dapat dimuatkan. Semak sambungan internet dan cuba lagi.");
 }
 function dlStatus(html,kind){const el=$("#dlStatus");if(!el)return;el.hidden=!html;el.className="dlstatus "+(kind||"");el.innerHTML=html||""}
-const MIME={pptx:"application/vnd.openxmlformats-officedocument.presentationml.presentation",json:"application/json"};
+const MIME={pdf:"application/pdf",pptx:"application/vnd.openxmlformats-officedocument.presentationml.presentation",json:"application/json"};
 const isMobile=()=>/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&/Mac/.test(navigator.platform||""));
 let lastUrl=null;
 /* Simpan fail: claude.ai guna kebenaran muat turun; di luar claude.ai guna Kongsi (telefon) atau pautan muat turun biasa */
@@ -671,6 +678,45 @@ async function saveFile(filename,blob){
   lastUrl=URL.createObjectURL(file);
   const a=document.createElement("a");a.href=lastUrl;a.download=filename;a.rel="noopener";document.body.appendChild(a);a.click();a.remove();
   return{url:lastUrl};
+}
+function doneSave(r,fn){
+  if(r==="cancel")dlStatus("Muat turun dibatalkan.");
+  else if(r&&r.url)dlStatus(`Fail <b>${esc(fn)}</b> sedia. Jika muat turun tidak bermula, <a href="${r.url}" download="${esc(fn)}">tekan di sini</a> (di telefon: tekan lama, pilih Muat turun pautan).`,"ok");
+  else dlStatus(`Fail <b>${esc(fn)}</b> telah dihantar untuk disimpan.`,"ok");
+}
+function fileBase(p){const d=new Date((p.tarikhKemaskini||today())+"T00:00:00");return"Laporan_Single_Page_"+(slug(p.kod)||"Projek")+"_"+BLN3[d.getMonth()]+String(d.getFullYear()).slice(2)}
+async function loadFirst(test,srcs,msg){
+  if(test())return;
+  for(const src of srcs){try{await loadScript(src);if(test())return}catch(e){}}
+  throw new Error(msg);
+}
+/* PDF: laporan sehalaman dirakam sebagai imej (susunan sama seperti di skrin) dan dimuatkan ke satu halaman A4 */
+async function downloadPdf(p){
+  const btn=$("#pdfBtn");btn.disabled=true;btn.textContent="Menjana…";dlStatus("Menjana fail PDF…");
+  let host=null;
+  try{
+    const V=LOCAL?["vendor/html2canvas.min.js"]:[];
+    await loadFirst(()=>window.html2canvas,V.concat(["https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js","https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js","https://unpkg.com/html2canvas@1.4.1/dist/html2canvas.min.js"]),"Pustaka PDF tidak dapat dimuatkan. Semak sambungan internet dan cuba lagi.");
+    await loadFirst(()=>window.jspdf&&window.jspdf.jsPDF,(LOCAL?["vendor/jspdf.umd.min.js"]:[]).concat(["https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js","https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js","https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js"]),"Pustaka PDF tidak dapat dimuatkan. Semak sambungan internet dan cuba lagi.");
+    host=document.createElement("div");
+    host.setAttribute("aria-hidden","true");
+    host.style.cssText="position:fixed;left:-12000px;top:0;width:880px;background:#ffffff";
+    host.innerHTML=reportHTML(p);
+    const sheet=host.firstElementChild;sheet.classList.add("print");
+    document.body.appendChild(host);
+    await Promise.all([...host.querySelectorAll("img")].map(im=>im.complete?null:new Promise(r=>{im.onload=im.onerror=r})));
+    const canvas=await window.html2canvas(sheet,{scale:2,useCORS:true,backgroundColor:"#ffffff",windowWidth:1200,logging:false});
+    const {jsPDF}=window.jspdf;
+    const pdf=new jsPDF({unit:"mm",format:"a4",orientation:"portrait",compress:true});
+    const pw=210,ph=297,mg=6;let w=pw-2*mg,h=canvas.height*w/canvas.width;
+    if(h>ph-2*mg){h=ph-2*mg;w=canvas.width*h/canvas.height}
+    pdf.addImage(canvas.toDataURL("image/jpeg",0.9),"JPEG",(pw-w)/2,mg,w,h);
+    pdf.setProperties({title:"Laporan Single Page "+(p.kod||""),subject:p.tajuk||"",creator:"Status Projek P55"});
+    const fn=fileBase(p)+".pdf";
+    doneSave(await saveFile(fn,pdf.output("blob")),fn);
+  }catch(e){
+    dlStatus("Muat turun gagal: "+esc((e&&(e.userMsg||e.message||e.code))||String(e)),"err");
+  }finally{if(host)host.remove();btn.disabled=false;btn.textContent="Muat turun PDF"}
 }
 async function downloadPptx(p){
   const btn=$("#dlBtn");btn.disabled=true;btn.textContent="Menjana…";dlStatus("Menjana fail PPTX…");
@@ -705,9 +751,9 @@ async function downloadPptx(p){
       [c("Fizikal (%)","8EAADB",{colspan:3}),c("Kewangan (%)","8EAADB",{colspan:2})],
       [c("Jadual","D9E2F3"),c("Sebenar","D9E2F3"),c("Beza","D9E2F3"),c("Jadual","D9E2F3"),c("Sebenar","D9E2F3")],
       [c(pct(p.fizJadual),"FBE5D6"),c(pct(p.fizSebenar),"FBE5D6"),c(hasF?sgn(b):"–","FBE5D6"),c(has(p.kewJadual)?num(p.kewJadual):"–","FBE5D6"),c(has(p.kewSebenar)?num(p.kewSebenar):"–","FBE5D6")],
-      [c("Status Perbelanjaan "+(p.tahunBelanja||""),"FBE5D6",{colspan:2,rowspan:2}),c("Peruntukan diterima","FBE5D6"),c("Belanja"+(num(p.tanggungan)?" + Tanggungan":""),"FBE5D6"),c("Baki","FBE5D6")],
-      [c(rm(p.peruntukan),"FBE5D6",{bold:true}),c(rm(num(p.belanja)+num(p.tanggungan)),"FBE5D6",{bold:true}),c(rm(bk),"FBE5D6",{bold:true})]
-    ],{x:3.03,y:3.0,w:4.05,colW:[.6,.6,.95,.95,.95],rowH:.24,fontFace:F,fontSize:8.5,border:{type:"solid",color:"2F528F",pt:.75}});
+      [c("Status\nPerbelanjaan\n"+(p.tahunBelanja||""),"FBE5D6",{rowspan:2}),c("Peruntukan diterima","FBE5D6"),c("Jumlah Sekatan","FBE5D6"),c("Belanja"+(num(p.tanggungan)?" + Tanggungan":""),"FBE5D6"),c("Baki","FBE5D6")],
+      [c(rm(p.peruntukan),"FBE5D6",{bold:true}),c(rm(p.sekatan),"FBE5D6",{bold:true}),c(rm(num(p.belanja)+num(p.tanggungan)),"FBE5D6",{bold:true}),c(rm(bk),"FBE5D6",{bold:true})]
+    ],{x:3.03,y:3.0,w:4.05,colW:[.81,.81,.81,.81,.81],rowH:.24,fontFace:F,fontSize:8,border:{type:"solid",color:"2F528F",pt:.75}});
     sl.addText("BAYARAN KEMAJUAN :",{x:2.95,y:4.52,w:2.5,h:.22,fontFace:F,fontSize:10,bold:true,isTextBox:true,margin:0});
     const all=p.bayaran||[],by=all.slice(-BY_MAX);
     const rows=[[c("Tarikh Penilaian","4472C4",{color:"FFFFFF",align:"left"}),c("Amaun Bayaran","4472C4",{color:"FFFFFF",align:"left"}),c("Jenis Bayaran","4472C4",{color:"FFFFFF",align:"left"})]];
@@ -723,12 +769,8 @@ async function downloadPptx(p){
     (is.length?is:["Tiada"]).forEach((x,i,a)=>tr.push({text:(is.length?(i+1)+".  ":"")+x,options:{breakLine:i<a.length-1}}));
     sl.addText(tr,{x:2.95,y:ty,w:4.2,h:Math.max(1,10.45-ty),fontFace:F,fontSize:9.5,valign:"top",margin:2,paraSpaceAfter:1,isTextBox:true,fit:"shrink"});
     const blob=await pres.write({outputType:"blob"});
-    const d=new Date((p.tarikhKemaskini||today())+"T00:00:00");
-    const fn="Laporan_Single_Page_"+(slug(p.kod)||"Projek")+"_"+BLN3[d.getMonth()]+String(d.getFullYear()).slice(2)+".pptx";
-    const r=await saveFile(fn,blob);
-    if(r==="cancel")dlStatus("Muat turun dibatalkan.");
-    else if(r&&r.url)dlStatus(`Fail <b>${esc(fn)}</b> sedia. Jika muat turun tidak bermula, <a href="${r.url}" download="${esc(fn)}">tekan di sini</a> (di telefon: tekan lama, pilih Muat turun pautan).`,"ok");
-    else dlStatus(`Fail <b>${esc(fn)}</b> telah dihantar untuk disimpan.`,"ok");
+    const fn=fileBase(p)+".pptx";
+    doneSave(await saveFile(fn,blob),fn);
   }catch(e){
     dlStatus("Muat turun gagal: "+esc((e&&(e.userMsg||e.message||e.code))||String(e)),"err");
   }finally{btn.disabled=false;btn.textContent="Muat turun PPTX"}
